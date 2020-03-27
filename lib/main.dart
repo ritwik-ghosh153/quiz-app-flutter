@@ -49,6 +49,16 @@ class _QuizPageState extends State<QuizPage> {
           context: context,
           title: 'Finished!',
           desc: 'You\'ve reached the end of the quiz.',
+          buttons: [
+            DialogButton(
+              child: Text(
+                "COOL",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              onPressed: () => Navigator.pop(context),
+              width: 120,
+            )
+          ],
         ).show();
 
         //TODO Step 4 Part C - reset the questionNumber,
@@ -135,7 +145,6 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked false.
                 checkAnswer(false);
-                print(quizBrain.isFinished());
               },
             ),
           ),
